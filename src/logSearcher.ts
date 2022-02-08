@@ -27,6 +27,7 @@ export const provideHandleTransactionLogSearcher = (
     // For each relevant event
     events.forEach((event) => {
       // Create a finding and add to the findings array
+      console.log(generateMetadata);
       findings.push(
         Finding.fromObject({
           name: agentName,
@@ -39,7 +40,7 @@ export const provideHandleTransactionLogSearcher = (
           // It should receive a `LogDescription` object
           // It should return a object containing metadata
           // See the function `processLogArgs` in `agent.ts` for an example
-          metadata: generateMetadata(event),
+          metadata: (typeof generateMetadata != 'undefined' ? generateMetadata(event) : undefined),
         })
       )
     });

@@ -22,7 +22,9 @@ const protocol: string = 'Wrapped-Ether';
 // A `LogDescription` object is passed into it
 // It should return an object containing metadata in string form
 // The logic inside this function will change depending on what metadata you want in the finding
-const processLogArgs = (log: LogDescription) => {
+// This function can also be left uninitialized if you do not want to add metadata to findings
+
+let processLogArgs = (log: LogDescription) => {
   return {
     src: log.args.src.toLowerCase(),
     dst: log.args.dst.toLowerCase(),
