@@ -27,7 +27,6 @@ export const provideHandleTransactionLogSearcher = (
     // For each relevant event
     events.forEach((event) => {
       // Create a finding and add to the findings array
-      console.log(generateMetadata);
       findings.push(
         Finding.fromObject({
           name: agentName,
